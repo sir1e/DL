@@ -7,7 +7,7 @@ public class Projectile_Spawn : MonoBehaviour
     public GameObject projectilePrefab;
     public void FireProjectile()
     {
-        Instantiate(projectilePrefab);
+        Instantiate(projectilePrefab,transform. );
     }
 
 }
