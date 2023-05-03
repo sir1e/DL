@@ -17,9 +17,9 @@ public class Damagble : MonoBehaviour
     [SerializeField]
     private float timeSinceHitGlobal= 0f;
     public float invincibilityTime = 0.7f;
-    public float healTime = 5f;
-   public  int healPerTime = 10;
-    public int healPerFunction = 10;
+    private float healTime = 7f;
+   private  int healPerTime = 10;
+    private int healPerFunction = 10;
     public int Max_Health
     {
         get
