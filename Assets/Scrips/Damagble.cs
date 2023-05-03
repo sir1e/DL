@@ -15,7 +15,7 @@ public class Damagble : MonoBehaviour
     private bool _isAlive = true;
     private float timeSinceHit = 0;
     [SerializeField]
-    private float timeSinceHitGlobal= 0;
+    private float timeSinceHitGlobal= 0f;
     public float invincibilityTime = 0.7f;
     public float healTime = 5f;
    public  int healPerTime = 10;
@@ -59,6 +59,7 @@ public class Damagble : MonoBehaviour
         {
             _isAlive = value;
             animator.SetBool("IsAlive", value);
+            
         }
     }
 
@@ -79,7 +80,7 @@ public class Damagble : MonoBehaviour
             }
             timeSinceHit = timeSinceHit + Time.deltaTime;
         }
-        //добавити значок та повідомлення про те, що гравець в бою
+  
         if (timeSinceHitGlobal > healTime)
         {
             HealForTime();
@@ -97,6 +98,9 @@ public class Damagble : MonoBehaviour
             daamgbleHit?.Invoke(damage, knockback);
             CharactersEvents.characterDamaged.Invoke(gameObject, damage);
             timeSinceHitGlobal = 0;
+
+
+
 
         }
     }
