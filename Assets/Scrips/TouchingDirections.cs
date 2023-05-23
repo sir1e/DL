@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TouchingDirections : MonoBehaviour
 {
+
     public ContactFilter2D castFilter;
     public float groundDistance = 0.05f;
     public float wallDistance = 0.2f;
@@ -14,7 +15,11 @@ public class TouchingDirections : MonoBehaviour
     private Vector2 wallcheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
     [SerializeField]
     private bool _isGrounded;
+
+    
+
     public bool IsGrounded
+
     {
         get { return _isGrounded; }
         private set {
@@ -39,7 +44,9 @@ public class TouchingDirections : MonoBehaviour
         {
             touchingCol = GetComponent<CapsuleCollider2D>();
             animator = GetComponent<Animator>();
-        }
+       
+
+    }
     void Start()
     {
         

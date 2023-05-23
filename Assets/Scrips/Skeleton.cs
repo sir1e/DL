@@ -90,6 +90,7 @@ public class Skeleton : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         TouchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
+
     }
     public bool lockvelocity
     {
