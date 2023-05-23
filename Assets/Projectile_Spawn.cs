@@ -6,7 +6,7 @@ public class Projectile_Spawn : MonoBehaviour
 {
     public Transform startPoint;
     public GameObject projectilePrefab;
-    public float projectileLifetime = 3f;   
+    public float projectileLifetime = 3f;       
     public void FireProjectile()
     {
  

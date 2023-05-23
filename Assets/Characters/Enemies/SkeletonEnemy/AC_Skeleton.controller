@@ -484,6 +484,7 @@ AnimatorState:
   m_StateMachineBehaviours:
   - {fileID: 3596693386922006487}
   - {fileID: 7449945940057962666}
+  - {fileID: 8329581715499332182}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -589,3 +590,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 7
+--- !u!114 &8329581715499332182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf31fe0e10a1cd41956c3d73c5d3755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundtoPlay: {fileID: 8300000, guid: 121ea2ce73806df448c7b8257f73a96d, type: 3}
+  volume: 1
+  playEnter: 1
+  playExit: 0
+  playAfterDelay: 0
+  playDelay: 0.25

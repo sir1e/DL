@@ -637,6 +637,7 @@ MonoBehaviour:
   _health: 100
   timeSinceHitGlobal: 0
   invincibilityTime: 0.7
+  _InBattle: 0
 --- !u!114 &7237941176104216391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2092804376316157595}
   projectilePrefab: {fileID: 8945419679843387803, guid: d3ad21d5ca758774a9c633b9b6c1d5f1, type: 3}
+  projectileLifetime: 3
 --- !u!1 &7972224823710850343
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,3 +699,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 0}
   projectilePrefab: {fileID: 8945419679843387803, guid: d3ad21d5ca758774a9c633b9b6c1d5f1, type: 3}
+  projectileLifetime: 3

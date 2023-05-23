@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
     public int attackDamage = 10;
     public Vector2 knockback = Vector2.zero;
 
+
+
     private void Awake()
     {
         attackCollider = GetComponent<Collider2D>();
@@ -23,12 +25,16 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damagble damagble = collision.GetComponent<Damagble>();
         if (damagble != null)
         {
-            damagble.Hit(attackDamage, knockback);
+            if(damagble.IsAlive)
+            {
+                damagble.Hit(attackDamage, knockback);
+            }
         }
     }
 }

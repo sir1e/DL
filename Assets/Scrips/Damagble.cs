@@ -114,10 +114,6 @@ public class Damagble : MonoBehaviour
             CharactersEvents.characterDamaged.Invoke(gameObject, damage);
             timeSinceHitGlobal = 0;
 
-
-
-
-
         }
     }
 
