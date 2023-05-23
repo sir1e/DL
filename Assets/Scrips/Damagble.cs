@@ -20,6 +20,7 @@ public class Damagble : MonoBehaviour
     private float healTime = 7f;
    private  int healPerTime = 10;
     private int healPerFunction = 10;
+    public bool _InBattle = false;
     public int Max_Health
     {
         get
@@ -46,7 +47,20 @@ public class Damagble : MonoBehaviour
             if(_health <= 0)
             {
                 IsAlive = false;
+                InBattle = false;
             }
+        }
+    }
+
+    public bool InBattle
+    {
+        get
+        {
+            return _InBattle;
+        }
+        set
+        {
+            _InBattle = value;
         }
     }
     public bool IsAlive
@@ -92,12 +106,14 @@ public class Damagble : MonoBehaviour
     
         if (IsAlive && !IsInvincible)
         {
+            InBattle = true;
             Health = Health - damage;
             IsInvincible = true;
             animator.SetTrigger("Hit");
             daamgbleHit?.Invoke(damage, knockback);
             CharactersEvents.characterDamaged.Invoke(gameObject, damage);
             timeSinceHitGlobal = 0;
+
 
 
 

@@ -12,6 +12,9 @@ public class Skeleton : MonoBehaviour
     Rigidbody2D rb;
     public DetectionZone attackZone;
     Animator animator;
+    Damagble damagble;
+    private bool _GetHit = false;
+    private bool _isAlive = true;
 
     public enum WalkDirection1
     { 
@@ -43,7 +46,27 @@ public class Skeleton : MonoBehaviour
     }
 
 
-   
+   public bool GetHit
+    {
+        get
+        {
+            return _GetHit;
+        }
+        set
+        {
+            _GetHit = value;
+        }
+    }
+    public bool IsAlive
+    {
+        get
+        {
+            return _isAlive;
+        }
+      set  {
+            _isAlive = value;
+        }
+    }
 
     public void FlipDirection()
     {
@@ -63,6 +86,7 @@ public class Skeleton : MonoBehaviour
     }
     private void Awake()
     {
+        damagble = GetComponent<Damagble>();
         rb = GetComponent<Rigidbody2D>();
         TouchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
@@ -116,6 +140,11 @@ public class Skeleton : MonoBehaviour
 
     void Update()
     {
+        if(damagble.IsAlive == true)
+        {
+            IsAlive = true;
+        }
+
         HasTarget = attackZone.detectedColliders.Count > 0;
         if(AttackCoolDown >0)   
         AttackCoolDown -= Time.deltaTime;
@@ -133,7 +162,7 @@ public class Skeleton : MonoBehaviour
     }
     public void OnHit(int damage, Vector2 knockback)
     {
-        
+        _GetHit = true;
         lockvelocity = true;
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
