@@ -44,7 +44,7 @@ public class TouchingDirections : MonoBehaviour
         {
             touchingCol = GetComponent<CapsuleCollider2D>();
             animator = GetComponent<Animator>();
-       
+
 
     }
     void Start()
