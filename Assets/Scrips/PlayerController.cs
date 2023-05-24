@@ -20,11 +20,11 @@ using UnityEngine.UI;
     TouchingDirections  touchingDirections;
     Damagble damagble;
 
-    private bool canDash = true;
+    public bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
-    private float dashingCoolDown = 1f;
+    [SerializeField]public float dashingCoolDown = 1f;
     [SerializeField] private TrailRenderer tr;
     
         public float Speed

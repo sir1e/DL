@@ -11566,6 +11566,8 @@ MonoBehaviour:
   coolDown2: 5
   IsCoolDown1: 0
   IsCoolDown2: 0
+  canDash: 1
+  dashingCoolDown: 1
   tr: {fileID: 1714841969}
   _isMoving: 0
 --- !u!4 &1714841960 stripped

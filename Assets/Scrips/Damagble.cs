@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Damagble : MonoBehaviour
 {
     public UnityEvent<int, Vector2> daamgbleHit;
+    PlayerController playerController;
     Animator animator;
     [SerializeField]
     private int _max_Health = 100;
@@ -24,6 +25,7 @@ public class Damagble : MonoBehaviour
    private  int healPerTime = 10;
     private int healPerFunction = 10;
     public bool _InBattle = false;
+    private bool isDashingCoolDown = false;
     public int Max_Health
     {
         get
@@ -109,6 +111,7 @@ public class Damagble : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
     }
     void Update()
     {
@@ -138,7 +141,24 @@ public class Damagble : MonoBehaviour
             daamgbleHit?.Invoke(damage, knockback);
             CharactersEvents.characterDamaged.Invoke(gameObject, damage);
             timeSinceHitGlobal = 0;
+            playerController.canDash = false;
 
+            StartCoroutine(DashCooldownCoroutine());
+
+        }
+    }
+
+    private IEnumerator DashCooldownCoroutine()
+    {
+        if (!isDashingCoolDown)
+        {
+            isDashingCoolDown = true;
+            playerController.canDash = false;
+
+            yield return new WaitForSeconds(playerController.dashingCoolDown);
+
+            playerController.canDash = true;
+            isDashingCoolDown = false;
         }
     }
 
