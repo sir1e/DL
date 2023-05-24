@@ -19,6 +19,13 @@ using UnityEngine.UI;
     public bool IsCoolDown2 = false;
     TouchingDirections  touchingDirections;
     Damagble damagble;
+
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCoolDown = 1f;
+    [SerializeField] private TrailRenderer tr;
     
         public float Speed
         {
@@ -119,6 +126,10 @@ using UnityEngine.UI;
   
         private void FixedUpdate()
         {
+        if (isDashing)
+        {
+            return;
+        }
         if(!lockvelocity )
             rb.velocity = new Vector2(moveInput.x * Speed, rb.velocity.y);
             animator.SetFloat("yVelocity", rb.velocity.y);
@@ -147,6 +158,10 @@ using UnityEngine.UI;
 
     private void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
         if (damagble.timeSinceHitGlobal > damagble.healTime)
         {
             damagble.HealForTime();
@@ -199,7 +214,13 @@ using UnityEngine.UI;
         }
         }
 
-
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (canDash)
+        {
+            StartCoroutine(Dash());
+        }
+    }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -250,6 +271,24 @@ using UnityEngine.UI;
         
         lockvelocity = true;
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
+    private IEnumerator Dash()
+    {
+    
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        Vector2 dashDirection = IsFacingRight ? Vector2.right : Vector2.left;
+        rb.velocity = dashDirection * dashingPower;
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCoolDown);
+        canDash = true;
     }
     }
     
