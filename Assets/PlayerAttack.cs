@@ -8,11 +8,16 @@ public class PlayerAttack : MonoBehaviour
     public int attackDamage = 10;
     public Vector2 knockback = Vector2.zero;
 
+    Damagble playerDamagble;
+    
 
 
     private void Awake()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player"); 
         attackCollider = GetComponent<Collider2D>();
+        playerDamagble = player.GetComponent<Damagble>();
+
     }
     void Start()
     {
@@ -34,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
             if(damagble.IsAlive)
             {
                 damagble.Hit(attackDamage, knockback);
+                playerDamagble.timeSinceHitGlobal = 0;
             }
         }
     }

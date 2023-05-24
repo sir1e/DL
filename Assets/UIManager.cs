@@ -4,17 +4,20 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject damageTextPrefab;
     public GameObject healthTextPrefab;
-
+    public Damagble damagblePlayer;
     public Canvas gameCanvas;
 
     private void Awake()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         gameCanvas = FindObjectOfType<Canvas>();
+        damagblePlayer = player.GetComponent<Damagble>();
 
     }
     public void OnEnable()
@@ -47,17 +50,28 @@ public class UIManager : MonoBehaviour
     {
         if (context.started)
         {
-#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
-            Debug.Log(this.name + ":" + this.GetType() + " : " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-#endif
-#if (UNITY_EDITOR)
-            UnityEditor.EditorApplication.isPlaying = false;
-#elif (UNITY_STANDALONE)
-Application. Quit();
-#elif (UNITY_WEBGL)
-SceneManager.LoadScene("QuitScene");
-#endif
+            SceneManager.LoadScene(0);
 
         }
     }
+
+    
+public void DeathScreen()
+    {
+        if (!damagblePlayer.IsAlive)
+        {
+            StartCoroutine(LoadSceneAfterDelay(0, 7f));
+        }
+    }
+
+    private IEnumerator LoadSceneAfterDelay(int sceneIndex, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneIndex);
+    }
+    private void Update()
+    {
+        DeathScreen();
+    }
+   
 }

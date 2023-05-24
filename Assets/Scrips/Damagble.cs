@@ -9,13 +9,16 @@ public class Damagble : MonoBehaviour
     Animator animator;
     [SerializeField]
     private int _max_Health = 100;
+    private int _max_Mana = 100;
     [SerializeField]
     private int _health = 100;
+    [SerializeField]
+    private int _mana = 100;
     private bool IsInvincible = false;
     private bool _isAlive = true;
     private float timeSinceHit = 0;
     [SerializeField]
-    private float timeSinceHitGlobal= 0f;
+    public float timeSinceHitGlobal= 0f;
     public float invincibilityTime = 0.7f;
     private float healTime = 7f;
    private  int healPerTime = 10;
@@ -34,6 +37,19 @@ public class Damagble : MonoBehaviour
         }
 
     }
+    public int Max_Mana
+    {
+        get
+        {
+            return _max_Mana;
+        }
+        set
+        {
+            _max_Mana = value;
+
+        }
+
+    }
 
     public int Health
     {
@@ -49,6 +65,18 @@ public class Damagble : MonoBehaviour
                 IsAlive = false;
                 InBattle = false;
             }
+        }
+    }
+    public int Mana
+    {
+        get
+        {
+            return _mana;
+        }
+        set
+        {
+            _mana = value;
+          
         }
     }
 

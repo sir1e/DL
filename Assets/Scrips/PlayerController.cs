@@ -12,6 +12,7 @@
         public float jumpImpulse = 10;
         TouchingDirections  touchingDirections;
     Damagble damagle;
+    
         public float Speed
         {
             get
@@ -172,7 +173,12 @@
     {
         if (context.started)
         {
-            animator.SetTrigger("super_attack");
+            if(damagle.Mana >= 50)
+            {
+                animator.SetTrigger("super_attack");
+                damagle.Mana -= 50;
+            }
+           
         }
     }
 
@@ -180,7 +186,12 @@
     {
         if (context.started)
         {
-            animator.SetTrigger("ranged_attack");
+            if (damagle.Mana >= 30)
+            {
+                animator.SetTrigger("ranged_attack");
+                damagle.Mana -= 30;
+            }
+
         }
     }
 
