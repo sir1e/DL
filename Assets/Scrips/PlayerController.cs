@@ -2,6 +2,7 @@
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.InputSystem;
+using UnityEngine.UI;
     [RequireComponent(typeof(Rigidbody2D),typeof(TouchingDirections), typeof(Damagble))]    
     public class PlayerController : MonoBehaviour
     {
@@ -10,7 +11,13 @@
         private bool _IsRunning = false;
         public bool _IsFacingRight = true;
         public float jumpImpulse = 10;
-        TouchingDirections  touchingDirections;
+    public Image SkillImage1;
+    public Image SkillImage2;
+    public float coolDown1 = 3f;
+    public float coolDown2 = 5f;
+    public bool IsCoolDown1 = false;
+    public bool IsCoolDown2 = false;
+    TouchingDirections  touchingDirections;
     Damagble damagle;
     
         public float Speed
@@ -105,16 +112,45 @@
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             touchingDirections = GetComponent<TouchingDirections>();
-        damagle = GetComponent < Damagble > ();
-        }
+            damagle = GetComponent < Damagble > ();
+
+             SkillImage1.fillAmount = 0;
+             SkillImage2.fillAmount = 0;
+    }
   
         private void FixedUpdate()
         {
         if(!lockvelocity )
             rb.velocity = new Vector2(moveInput.x * Speed, rb.velocity.y);
             animator.SetFloat("yVelocity", rb.velocity.y);
+
+        if (IsCoolDown1)
+        {
+
+            SkillImage1.fillAmount -= 1 / coolDown1 * Time.deltaTime;
+            if (SkillImage1.fillAmount <= 0)
+            {
+                SkillImage1.fillAmount = 0;
+                IsCoolDown1 = false;
+            }
         }
-      public  void OnMove(InputAction.CallbackContext context)
+
+        if (IsCoolDown2)
+        {
+            SkillImage2.fillAmount -= 1 / coolDown2 * Time.deltaTime;
+            if (SkillImage2.fillAmount <= 0)
+            {
+                SkillImage2.fillAmount = 0;
+                IsCoolDown2 = false;
+            }
+        }
+    }
+
+    private void Update()
+    {
+     
+    }
+    public  void OnMove(InputAction.CallbackContext context)
         {
       if (damagle.IsAlive)
         {
@@ -161,6 +197,8 @@
         }
         }
 
+
+
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -173,25 +211,35 @@
     {
         if (context.started)
         {
-            if(damagle.Mana >= 50)
+            if (!IsCoolDown2)
             {
-                animator.SetTrigger("super_attack");
-                damagle.Mana -= 50;
+                if (damagle.Mana >= 50)
+                {
+                    IsCoolDown2 = true;
+                    animator.SetTrigger("super_attack");
+                    damagle.Mana -= 50;
+                }
             }
+       
            
         }
+        
     }
 
     public void OnRangedAttack(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            if (damagle.Mana >= 30)
+            if (!IsCoolDown1)
             {
-                animator.SetTrigger("ranged_attack");
-                damagle.Mana -= 30;
-            }
+                if (damagle.Mana >= 30)
+                {
+                    IsCoolDown1 = true;
+                    animator.SetTrigger("ranged_attack");
+                    damagle.Mana -= 30;
 
+                }
+            }
         }
     }
 
