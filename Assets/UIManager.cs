@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject damageTextPrefab;
     public GameObject healthTextPrefab;
+    public GameObject manaTextPrefab;
     public Damagble damagblePlayer;
     public Canvas gameCanvas;
 
@@ -24,11 +25,13 @@ public class UIManager : MonoBehaviour
     {
       CharactersEvents.characterDamaged += CharacterTookDamage;
         CharactersEvents.characterHealed += CharacterHealed;
+        CharactersEvents.characterHealed += CharacterHealed;
     }
 
     private void OnDisable()
     {
         CharactersEvents.characterDamaged -= CharacterTookDamage;
+        CharactersEvents.characterHealed -= CharacterHealed;
         CharactersEvents.characterHealed -= CharacterHealed;
     }
     public void CharacterTookDamage(GameObject character, int damageReceived)
@@ -45,6 +48,14 @@ public class UIManager : MonoBehaviour
         TMP_Text tmpText = Instantiate(healthTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
 
         tmpText.text = healReceived.ToString();
+    }
+
+    public void CharacterMana(GameObject character, int manaChange)
+    {
+        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
+        TMP_Text tmpText = Instantiate(healthTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
+
+        tmpText.text = manaChange.ToString();
     }
     public void OnGameExit(InputAction.CallbackContext context)
     {

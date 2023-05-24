@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - SkeletonEnemy
+  - Thunder Ball
+  - Volt Wave
   layers:
   - Default
   - TransparentFX

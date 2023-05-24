@@ -20,7 +20,7 @@ public class Damagble : MonoBehaviour
     [SerializeField]
     public float timeSinceHitGlobal= 0f;
     public float invincibilityTime = 0.7f;
-    private float healTime = 7f;
+    public float healTime = 7f;
    private  int healPerTime = 10;
     private int healPerFunction = 10;
     public bool _InBattle = false;
@@ -123,10 +123,7 @@ public class Damagble : MonoBehaviour
             timeSinceHit = timeSinceHit + Time.deltaTime;
         }
   
-        if (timeSinceHitGlobal > healTime)
-        {
-            HealForTime();
-        }
+     
     }
     
     public void Hit(int damage, Vector2 knockback)

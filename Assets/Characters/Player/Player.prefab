@@ -535,6 +535,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 498555fb-e94a-4114-aed2-337e696b16e3
     m_ActionName: Player/Ranged Attack[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0469330d-5f52-4b11-9069-512a99dc9c3a
+    m_ActionName: UI/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -635,8 +639,10 @@ MonoBehaviour:
         m_CallState: 2
   _max_Health: 100
   _health: 100
+  _mana: 100
   timeSinceHitGlobal: 0
   invincibilityTime: 0.7
+  healTime: 7
   _InBattle: 0
 --- !u!114 &7237941176104216391
 MonoBehaviour:

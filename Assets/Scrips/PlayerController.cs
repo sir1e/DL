@@ -18,7 +18,7 @@ using UnityEngine.UI;
     public bool IsCoolDown1 = false;
     public bool IsCoolDown2 = false;
     TouchingDirections  touchingDirections;
-    Damagble damagle;
+    Damagble damagble;
     
         public float Speed
         {
@@ -112,9 +112,8 @@ using UnityEngine.UI;
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             touchingDirections = GetComponent<TouchingDirections>();
-            damagle = GetComponent < Damagble > ();
-
-             SkillImage1.fillAmount = 0;
+            damagble = GetComponent < Damagble > ();
+        SkillImage1.fillAmount = 0;
              SkillImage2.fillAmount = 0;
     }
   
@@ -127,8 +126,8 @@ using UnityEngine.UI;
         if (IsCoolDown1)
         {
 
-            SkillImage1.fillAmount -= 1 / coolDown1 * Time.deltaTime;
-            if (SkillImage1.fillAmount <= 0)
+            SkillImage1.fillAmount += 1 / coolDown1 * Time.deltaTime;
+            if (SkillImage1.fillAmount == 1)
             {
                 SkillImage1.fillAmount = 0;
                 IsCoolDown1 = false;
@@ -137,22 +136,25 @@ using UnityEngine.UI;
 
         if (IsCoolDown2)
         {
-            SkillImage2.fillAmount -= 1 / coolDown2 * Time.deltaTime;
-            if (SkillImage2.fillAmount <= 0)
+            SkillImage2.fillAmount += 1 / coolDown2 * Time.deltaTime;
+            if (SkillImage2.fillAmount == 1)
             {
                 SkillImage2.fillAmount = 0;
                 IsCoolDown2 = false;
             }
-        }
+        }   
     }
 
     private void Update()
     {
-     
+        if (damagble.timeSinceHitGlobal > damagble.healTime)
+        {
+            damagble.HealForTime();
+        }
     }
     public  void OnMove(InputAction.CallbackContext context)
         {
-      if (damagle.IsAlive)
+      if (damagble.IsAlive)
         {
             moveInput = context.ReadValue<Vector2>();
             IsMoving = moveInput != Vector2.zero;
@@ -213,11 +215,11 @@ using UnityEngine.UI;
         {
             if (!IsCoolDown2)
             {
-                if (damagle.Mana >= 50)
+                if (damagble.Mana >= 50)
                 {
                     IsCoolDown2 = true;
                     animator.SetTrigger("super_attack");
-                    damagle.Mana -= 50;
+                    damagble.Mana -= 50;
                 }
             }
        
@@ -232,11 +234,11 @@ using UnityEngine.UI;
         {
             if (!IsCoolDown1)
             {
-                if (damagle.Mana >= 30)
+                if (damagble.Mana >= 30)
                 {
                     IsCoolDown1 = true;
                     animator.SetTrigger("ranged_attack");
-                    damagle.Mana -= 30;
+                    damagble.Mana -= 30;
 
                 }
             }

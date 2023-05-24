@@ -12,5 +12,7 @@ using UnityEngine;
 
     public static UnityAction<GameObject, int> characterHealed ;
 
+    public static UnityAction<GameObject, int> characterMana;
+
 }
 
