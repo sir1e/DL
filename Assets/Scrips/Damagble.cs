@@ -14,7 +14,7 @@ public class Damagble : MonoBehaviour
     private int _health = 100;
     [SerializeField]
     private int _mana = 100;
-    private bool IsInvincible = false;
+    public  bool IsInvincible = false;
     private bool _isAlive = true;
     private float timeSinceHit = 0;
     [SerializeField]
