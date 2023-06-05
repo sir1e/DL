@@ -6,7 +6,7 @@ public class Attack : MonoBehaviour
 {
     Collider2D attackCollider;
     public int attackDamage = 15;
-    private Vector2 knockback = new Vector2(0,0);
+    public Vector2 knockback = Vector2.zero;
 
     private void Awake()
     {
