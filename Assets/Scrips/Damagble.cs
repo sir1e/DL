@@ -136,8 +136,7 @@ public class Damagble : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         playerDamagble = player.GetComponent<Damagble>();
 
-         player = GameObject.FindGameObjectWithTag("Player");
-        damagble = player.GetComponent<Damagble>();
+        
         
 
     }
