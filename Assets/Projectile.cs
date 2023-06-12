@@ -31,9 +31,8 @@ public class Projectile : MonoBehaviour
         {
             Vector2 vectroknockaback = transform.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
             damagble.Hit(damage, vectroknockaback);
-            Destroy(gameObject);
             playerDamagble.timeSinceHitGlobal = 0;
-          
+            Destroy(gameObject);
         }
     }
 }

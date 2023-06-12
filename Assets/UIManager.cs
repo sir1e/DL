@@ -25,14 +25,14 @@ public class UIManager : MonoBehaviour
     {
       CharactersEvents.characterDamaged += CharacterTookDamage;
         CharactersEvents.characterHealed += CharacterHealed;
-        CharactersEvents.characterMana += CharacterHealed;
+        CharactersEvents.characterHealed += CharacterHealed;
     }
 
     private void OnDisable()
     {
         CharactersEvents.characterDamaged -= CharacterTookDamage;
         CharactersEvents.characterHealed -= CharacterHealed;
-        CharactersEvents.characterMana -= CharacterHealed;
+        CharactersEvents.characterHealed -= CharacterHealed;
     }
     public void CharacterTookDamage(GameObject character, int damageReceived)
     {
@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
     public void CharacterMana(GameObject character, int manaChange)
     {
         Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
-        TMP_Text tmpText = Instantiate(manaTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
+        TMP_Text tmpText = Instantiate(healthTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform).GetComponent<TMP_Text>();
 
         tmpText.text = manaChange.ToString();
     }
