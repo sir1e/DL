@@ -7,8 +7,6 @@ public class Damagble : MonoBehaviour
 {
     public UnityEvent<int, Vector2> daamgbleHit;
     PlayerController playerController;
-  GameObject player;
-    Damagble damagble;
     Animator animator;
     [SerializeField]
     private int _max_Health = 100;
@@ -28,15 +26,11 @@ public class Damagble : MonoBehaviour
     private int healPerFunction = 10;
     public bool _InBattle = false;
     private bool isDashingCoolDown = false;
-
+    GameObject player;
     Damagble playerDamagble;
 
     
     
-
-    
-
-
     public int Max_Health
     {
         get
@@ -76,16 +70,9 @@ public class Damagble : MonoBehaviour
             if(_health <= 0)
             {
                 IsAlive = false;
-
                 playerDamagble.Mana += 15;
                 CharactersEvents.characterMana.Invoke(player, 15);
                 InBattle = false;
-
-
-                damagble.Mana += 15;
-
-                
-
             }
         }
     }
@@ -132,14 +119,8 @@ public class Damagble : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
-
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         playerDamagble = player.GetComponent<Damagble>();
-
-         player = GameObject.FindGameObjectWithTag("Player");
-        damagble = player.GetComponent<Damagble>();
-        
-
     }
     void Update()
     {
