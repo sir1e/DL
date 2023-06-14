@@ -26,6 +26,8 @@ public class Damagble : MonoBehaviour
     private int healPerFunction = 10;
     public bool _InBattle = false;
     private bool isDashingCoolDown = false;
+    Damagble damagble;
+    GameObject player;
     public int Max_Health
     {
         get
@@ -52,6 +54,10 @@ public class Damagble : MonoBehaviour
         }
 
     }
+    private void AddingMana(int manaTick)
+    {
+        damagble.Mana += manaTick;
+    }
 
     public int Health
     {
@@ -66,6 +72,9 @@ public class Damagble : MonoBehaviour
             {
                 IsAlive = false;
                 InBattle = false;
+                if(Mana == Max_Mana) AddingMana(10);
+                else AddingMana(10);
+
             }
         }
     }
@@ -77,7 +86,7 @@ public class Damagble : MonoBehaviour
         }
         set
         {
-            _mana = value;
+                        _mana = value;
           
         }
     }
@@ -112,6 +121,8 @@ public class Damagble : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        damagble = player.GetComponent<Damagble>();
     }
     void Update()
     {
@@ -141,9 +152,9 @@ public class Damagble : MonoBehaviour
             daamgbleHit?.Invoke(damage, knockback);
             CharactersEvents.characterDamaged.Invoke(gameObject, damage);
             timeSinceHitGlobal = 0;
-            playerController.canDash = false;
+           
 
-            StartCoroutine(DashCooldownCoroutine());
+
 
         }
     }
