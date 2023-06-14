@@ -152,7 +152,9 @@ public class Damagble : MonoBehaviour
             daamgbleHit?.Invoke(damage, knockback);
             CharactersEvents.characterDamaged.Invoke(gameObject, damage);
             timeSinceHitGlobal = 0;
-           
+            StartCoroutine(DashCooldownCoroutine());
+
+
 
 
 
