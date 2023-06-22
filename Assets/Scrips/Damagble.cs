@@ -158,9 +158,10 @@ public class Damagble : MonoBehaviour
             timeSinceHitGlobal = 0;
             if(gameObject == player)
             StartCoroutine(DashCooldownCoroutine());
-            string message = "„ас "+ CurrentDate + " ќб'Їкт "+ object1 + " отримав " + damage + " шкоди";
+            string message = "„ас " + CurrentDate + " ќб'Їкт " + object1 + " отримав " + damage + " шкоди\n";
 
-            string path = "Logs.txt";
+
+            string path = @"Assets\Logs.txt";
             StreamWriter writer = new StreamWriter(path, true);
             writer.WriteLine(message);
             writer.Close();

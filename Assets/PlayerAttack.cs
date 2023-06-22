@@ -44,9 +44,9 @@ public class PlayerAttack : MonoBehaviour
                 playerDamagble.timeSinceHitGlobal = 0;
 
                 DateTime CurrentDate = DateTime.Now;
-                string message = "„ас " + CurrentDate + " ќб'Їкт Player ударив з силою " + attackDamage + " шкоди";
+                string message = "„ас " + CurrentDate + " ќб'Їкт Player ударив з силою " + attackDamage + " шкоди\n";
 
-                string path = "Logs.txt";
+                string path = @"Assets\Logs.txt";
                 StreamWriter writer = new StreamWriter(path, true);
                 writer.WriteLine(message);
                 writer.Close();

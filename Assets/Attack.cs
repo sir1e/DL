@@ -35,8 +35,8 @@ public class Attack : MonoBehaviour
 
             DateTime CurrentDate = DateTime.Now;
             string object1 = gameObject.transform.parent.name;
-            string message = "„ас " + CurrentDate + " ќб'Їкт "+ object1 + " ударив з силою " + attackDamage + " шкоди";
-            string path = "Logs.txt";
+            string message = "„ас " + CurrentDate + " ќб'Їкт "+ object1 + " ударив з силою " + attackDamage + " шкоди\n";
+            string path = @"Assets\Logs.txt";
             StreamWriter writer = new StreamWriter(path, true);
             writer.WriteLine(message);
             writer.Close();
