@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEngine.UI;
-using System.Linq;
 using TMPro;
+using System.Linq;
 
 public class Logs : MonoBehaviour
 {
@@ -13,15 +12,17 @@ public class Logs : MonoBehaviour
 
     private void Start()
     {
-        string readFromFile = Application.dataPath + @"\Logs.txt";
+        string readFromFile = Application.dataPath + "/Logs.txt";
         List<string> fileLines = File.ReadAllLines(readFromFile).ToList();
 
         foreach (string line in fileLines)
         {
             GameObject logTextObject = Instantiate(LogTextPrefab, ContentWindow);
-            Text logText = logTextObject.GetComponent<Text>();
+            TextMeshProUGUI logText = logTextObject.GetComponent<TextMeshProUGUI>();
             logText.text = line;
+            logTextObject.transform.SetParent(ContentWindow, false);
         }
     }
 }
+
 
