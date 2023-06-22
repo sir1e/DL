@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.IO;
 
 public class Attack : MonoBehaviour
 {
@@ -30,6 +32,14 @@ public class Attack : MonoBehaviour
         {
             Vector2 vectroknockaback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
             damagble.Hit(attackDamage, vectroknockaback);
+
+            DateTime CurrentDate = DateTime.Now;
+            string object1 = gameObject.transform.parent.name;
+            string message = "„ас " + CurrentDate + " ќб'Їкт "+ object1 + " ударив з силою " + attackDamage + " шкоди";
+            string path = "Logs.txt";
+            StreamWriter writer = new StreamWriter(path, true);
+            writer.WriteLine(message);
+            writer.Close();
         }
     }
 }

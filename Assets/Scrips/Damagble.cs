@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.IO;
+using System;
 
 public class Damagble : MonoBehaviour
 {
@@ -145,6 +147,8 @@ public class Damagble : MonoBehaviour
     
         if (IsAlive && !IsInvincible)
         {
+            string object1 = gameObject.name;
+            DateTime CurrentDate = DateTime.Now;
             InBattle = true;
             Health = Health - damage;
             IsInvincible = true;
@@ -152,12 +156,14 @@ public class Damagble : MonoBehaviour
             daamgbleHit?.Invoke(damage, knockback);
             CharactersEvents.characterDamaged.Invoke(gameObject, damage);
             timeSinceHitGlobal = 0;
+            if(gameObject == player)
             StartCoroutine(DashCooldownCoroutine());
+            string message = "„ас "+ CurrentDate + " ќб'Їкт "+ object1 + " отримав " + damage + " шкоди";
 
-
-
-
-
+            string path = "Logs.txt";
+            StreamWriter writer = new StreamWriter(path, true);
+            writer.WriteLine(message);
+            writer.Close();
         }
     }
 

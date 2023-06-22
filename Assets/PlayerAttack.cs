@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -40,6 +42,14 @@ public class PlayerAttack : MonoBehaviour
             {
                 damagble.Hit(attackDamage, knockback);
                 playerDamagble.timeSinceHitGlobal = 0;
+
+                DateTime CurrentDate = DateTime.Now;
+                string message = "„ас " + CurrentDate + " ќб'Їкт Player ударив з силою " + attackDamage + " шкоди";
+
+                string path = "Logs.txt";
+                StreamWriter writer = new StreamWriter(path, true);
+                writer.WriteLine(message);
+                writer.Close();
             }
         }
     }
