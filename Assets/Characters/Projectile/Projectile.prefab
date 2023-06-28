@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0739de0d384e5f24d93a6c9d1ab1bb31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  prospeed: {x: 10, y: 0}
+  attackDamage: 20
   knockback: {x: 0, y: 0}
+  prospeed: {x: 10, y: 0}
 --- !u!50 &1991766881790985837
 Rigidbody2D:
   serializedVersion: 4

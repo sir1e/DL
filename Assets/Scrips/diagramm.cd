@@ -1,175 +1,175 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CharactersEvents" Collapsed="true">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+    <Position X="21" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAEAA=</HashCode>
       <FileName>Assets\Scrips\Events\CharactersEvents.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Attack" Collapsed="true">
-    <Position X="1.75" Y="2" Width="1.5" />
+    <Position X="16.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAgACAgAAAAAAAAEAAAAEAAAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scrips\Attack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CheckBehindBack" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="22.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAABAAEA=</HashCode>
       <FileName>Assets\Scrips\CheckBehindBack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Damagble" Collapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="24.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>hwQALAAAAEMIhAAAAgIQAACAAAAABgABAYBAIAoAAEA=</HashCode>
       <FileName>Assets\Scrips\Damagble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DetectionZone" Collapsed="true">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+    <Position X="26.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAACAAAAAAAAAAAAAAQAAAEAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scrips\DetectionZone.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Fade_In" Collapsed="true">
-    <Position X="11.25" Y="0.5" Width="1.5" />
+    <Position X="28" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAQAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scrips\Fade_In.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HealhBar" Collapsed="true">
-    <Position X="4.25" Y="1.5" Width="1.5" />
+    <Position X="21" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAQAEA=</HashCode>
       <FileName>Assets\Scrips\HealhBar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HealthText" Collapsed="true">
-    <Position X="6" Y="1.5" Width="1.5" />
+    <Position X="22.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAgAAAAAAAEAAAAAAAAAAAEAEAAAAAAABAAEAAAEA=</HashCode>
       <FileName>Assets\Scrips\HealthText.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Logs" Collapsed="true">
-    <Position X="9.5" Y="1.5" Width="1.5" />
+    <Position X="26.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Assets\Scrips\Logs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MainMenu" Collapsed="true">
-    <Position X="11.25" Y="1.5" Width="1.5" />
+    <Position X="28" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scrips\MainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ManaBar" Collapsed="true">
-    <Position X="4.25" Y="2.5" Width="1.5" />
+    <Position X="21" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAAEA=</HashCode>
       <FileName>Assets\Scrips\ManaBar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="InfiniteGroundGenerator" Collapsed="true">
-    <Position X="7.75" Y="1.5" Width="1.5" />
+    <Position X="24.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAIQACAAAAAAAAAgAAABIAAAAAABAAAQAAEAAAA=</HashCode>
       <FileName>Assets\Scrips\map_creator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjFadeRemove" Collapsed="true">
-    <Position X="6" Y="2.5" Width="1.5" />
+    <Position X="22.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAEAAKAA=</HashCode>
       <FileName>Assets\Scrips\ObjFadeRemove.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerAttack" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Position X="17.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAgACAgAAEAAAAAEAAAAMAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scrips\PlayerAttack.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerController" Collapsed="true">
-    <Position X="9.5" Y="2.5" Width="1.5" />
+    <Position X="26.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>DAYAAGAAAgCAgACMIAQAQgABAAMQjMHgCJCSAAAAAGA=</HashCode>
       <FileName>Assets\Scrips\PlayerController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayOneShotSound" Collapsed="true">
-    <Position X="11.25" Y="2.5" Width="1.5" />
+    <Position X="28" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAgAAABAAAAAACAAAAEAAAYAAAAAAIAAAAoACAAA=</HashCode>
       <FileName>Assets\Scrips\PlayOneShotSound.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Projectile" Collapsed="true">
-    <Position X="4.25" Y="3.5" Width="1.5" />
+    <Position X="18.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAggAEEAAAAAAAABEAAAAABAAAAAAAAAEA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAEAAAAAAAABEAAAAABAAAAAAAAAEA=</HashCode>
       <FileName>Assets\Scrips\Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Projectile_Spawn" Collapsed="true">
-    <Position X="6" Y="3.5" Width="1.5" />
+    <Position X="21" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAGAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scrips\Projectile_Spawn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SetFloat" Collapsed="true">
-    <Position X="9.5" Y="3.5" Width="1.5" />
+    <Position X="24.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAgAAAgAABgAAAAQQAIAIgAYAAAAAAAAAAAIIAAAA=</HashCode>
       <FileName>Assets\Scrips\SetFloat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Skeleton" Collapsed="true">
-    <Position X="11.25" Y="3.5" Width="1.5" />
+    <Position X="26.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>FQwABCAgAwAMACAFQAEACAAAAAAABFBFAAAIAAECAEA=</HashCode>
       <FileName>Assets\Scrips\Skeleton.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SoundManager" Collapsed="true">
-    <Position X="4.25" Y="4.5" Width="1.5" />
+    <Position X="28" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgIAAACAAAAIAAACIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scrips\SoundManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TouchingDirections" Collapsed="true">
-    <Position X="6" Y="4.5" Width="1.5" />
+    <Position X="21" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BABAAAQAAiBAAQIAAAAAAAAAAAAQAgAAAAAACSEAAEA=</HashCode>
       <FileName>Assets\Scrips\TouchingDirections.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UIManager" Collapsed="true">
-    <Position X="7.75" Y="4.5" Width="1.5" />
+    <Position X="22.75" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAgAAAAAIIRAAAAhAAAgAAIAAAABACCCEA=</HashCode>
       <FileName>Assets\Scrips\UIManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OldMan_Dialogue" Collapsed="true">
-    <Position X="7.75" Y="2.5" Width="1.5" />
+    <Position X="24.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BARAIAQgAAAAAACBAACAAAAAAEAAAABIEEAAAAEBAEA=</HashCode>
       <FileName>Assets\OldMan_Dialogue.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RunningAway" Collapsed="true">
-    <Position X="7.75" Y="3.5" Width="1.5" />
+    <Position X="22.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\RunningAway.cs</FileName>

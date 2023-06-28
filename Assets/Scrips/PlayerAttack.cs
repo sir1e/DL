@@ -6,11 +6,12 @@ using System;
 
 public class PlayerAttack : MonoBehaviour
 {
-    Collider2D attackCollider;
-    public int attackDamage = 10;
+    protected Collider2D attackCollider;
+
+   [SerializeField] public int attackDamage;
     public Vector2 knockback = Vector2.zero;
 
-    Damagble playerDamagble;
+    protected Damagble playerDamagble;
     
 
 
@@ -35,16 +36,21 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Attack(collision, knockback);
+        playerDamagble.timeSinceHitGlobal = 0;
+    }
+
+   public void Attack(Collider2D collision, Vector2 knockback)
+    {
         Damagble damagble = collision.GetComponent<Damagble>();
         if (damagble != null)
         {
-            if(damagble.IsAlive)
+            if (damagble.IsAlive)
             {
                 damagble.Hit(attackDamage, knockback);
-                playerDamagble.timeSinceHitGlobal = 0;
-
                 DateTime CurrentDate = DateTime.Now;
-                string message = "„ас " + CurrentDate + " ќб'Їкт Player ударив з силою " + attackDamage + " шкоди\n";
+                string objectName = gameObject.transform.parent != null ? gameObject.transform.parent.name : "Unknown";
+                string message = $"„ас {CurrentDate} ќб'Їкт {objectName} ударив з силою {attackDamage} шкоди\n";
 
                 string path = @"Assets\Logs.txt";
                 StreamWriter writer = new StreamWriter(path, true);
@@ -53,7 +59,5 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
-
-   
     
 }
