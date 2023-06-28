@@ -640,6 +640,7 @@ MonoBehaviour:
   _max_Health: 100
   _health: 100
   _mana: 100
+  IsInvincible: 0
   timeSinceHitGlobal: 0
   invincibilityTime: 0.7
   healTime: 7
