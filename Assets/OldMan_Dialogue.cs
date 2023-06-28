@@ -52,7 +52,7 @@ public class OldMan_Dialogue : MonoBehaviour
     }
 
     private IEnumerator Typing()
-    {
+    { 
         isTyping = true; // Set typing flag to true
         foreach (char letter in dialogue[index].ToCharArray())
         {
